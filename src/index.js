@@ -1,4 +1,4 @@
-//getting start button and sound iniatalization
+//getting start button and sound initialization
 const sbtn = document.getElementById("START");
 const selects = document.querySelectorAll("select");
 const clickSound = new Audio("./assets/abc.mp3");
@@ -496,18 +496,18 @@ allCell.forEach((cell)=>{
             teleportBtn.style.outline = "none";
             teleportSelected = null;
             teleportActive = false;
-            pt = 30;
             //check both cells for overflow after swap
             let capA = getCapacity(idA);
             let capB = getCapacity(idB);
             let needsExplosion = (cellA.count >= capA) || (cellB.count >= capB);
 
-            if(!needsExplosion){
-                //no explosion needed, just dots and finish turn
+           if(!needsExplosion){
+                // no explosion needed, just render only
                 renderDots(document.getElementById(idA), cellA.count, cellA.color);
                 renderDots(document.getElementById(idB), cellB.count, cellB.color);
                 saveState();
-                nextTurn();
+                updateBackground();
+                busy = false;
             } else {
                 //render current state first
                 renderDots(document.getElementById(idA), cellA.count, cellA.color);
@@ -550,8 +550,6 @@ allCell.forEach((cell)=>{
                         }
                     }
                     saveState();
-                    currentPlayer++;
-                    if(currentPlayer >= alivePlayers.length) currentPlayer = 0;
                     updateBackground();
                     busy = false;
                 }
