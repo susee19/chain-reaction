@@ -1,89 +1,202 @@
- @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap');
-body{
-    margin:0;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    background:#45567e;
-    font-family:'Baloo 2',cursive;
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap');
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #45567e;
+    font-family: 'Baloo 2', cursive;
     overflow: hidden;
-    text-align:center;
-    padding:30px 20px;
-    box-sizing:border-box;
-    position:relative;
-     }
-.bgText{
-    position:absolute;
-    font-size:12rem;
-    font-weight:700;
-    opacity:0.08;
-    color:white;
-    z-index:0;
-    user-select:none;
+    text-align: center;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    position: relative;
 }
-h1{
-    color:white;
-    font-size:4.5rem;
-    margin:0;
-    letter-spacing:2px;
-    font-weight:700;
-    text-shadow:0 4px 15px rgba(0,0,0,0.35);
-    z-index:2;
+.bgText {
+    position: absolute;
+    font-size: 12rem;
+    font-weight: 700;
+    opacity: 0.08;
+    color: white;
+    z-index: 0;
+    user-select: none;
 }
-#count{
-    margin-top:10px;
-    color:white;
-    font-size:1.5rem;
-    z-index:2;
+h1 {
+    color: white;
+    font-size: 4.5rem;
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    z-index: 2;
 }
-
-.scoreBoard{
-    margin-top:40px;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-    z-index:2;
+#count {
+    margin-top: 10px;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 2;
 }
-.score{
-    width:260px;
-    padding:15px;
-    border-radius:16px;
-    color:white;
-    font-size:1.3rem;
-    font-weight:700;
-    box-shadow:0 6px 20px rgba(0,0,0,0.25);
-    animation:slideUp 0.5s ease;
+.scoreBoard {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2;
 }
-button{
-    width:220px;
-    padding:15px;
-    margin-top:40px;
-    border:none;
-    border-radius:16px;
-    background:#5c72a0;
-    color:white;
-    font-size:1.2rem;
-    font-family:'Baloo 2',cursive;
-    font-weight:700;
-    cursor:pointer;
-    transition:0.25s;
-    box-shadow:0 6px 20px rgba(37,99,235,0.4);
-    z-index:2;
+.score {
+    width: 260px;
+    padding: 15px;
+    border-radius: 16px;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    animation: slideUp 0.5s ease;
 }
-button:hover{
-    transform:translateY(-3px) scale(1.03);
-    background:#3b82f6;
+button {
+    width: 220px;
+    padding: 15px;
+    margin-top: 40px;
+    border: none;
+    border-radius: 16px;
+    background: #5c72a0;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    z-index: 2;
 }
-@keyframes slideUp{
-    from{
-        transform:translateY(30px);
-        opacity:0;
+button:hover {
+    transform: translateY(-3px) scale(1.03);
+    background: #3b82f6;
+}
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
     }
-    to{
-        transform:translateY(0px);
-        opacity:1;
+    to {
+        transform: translateY(0px);
+        opacity: 1;
     }
 }
+@media (max-width: 768px) {
+    .bgText {
+        font-size: 8rem;
+    }
+    h1 {
+        font-size: 3.2rem;
+    }
+    #count {
+        font-size: 1.2rem;
+    }
+    .score {
+        width: 220px;
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+    .scoreBoard {
+        margin-top: 28px;
+        gap: 12px;
+    }
+    button {
+        width: 200px;
+        padding: 13px;
+        font-size: 1.1rem;
+        margin-top: 28px;
+    }
+}
+@media (max-width: 480px) {
+    body {
+        padding: 20px 15px;
+    }
+    .bgText {
+        font-size: 5rem;
+    }
+    h1 {
+        font-size: 2.4rem;
+        letter-spacing: 1px;
+    }
+    #count {
+        font-size: 1rem;
+        margin-top: 6px;
+    }
+    .scoreBoard {
+        margin-top: 20px;
+        gap: 10px;
+    }
+    .score {
+        width: 85vw;
+        max-width: 280px;
+        font-size: 1rem;
+        padding: 11px;
+        border-radius: 12px;
+    }
+    button {
+        width: 85vw;
+        max-width: 280px;
+        padding: 12px;
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+}
+@media (max-width: 360px) {
+    .bgText {
+        font-size: 3.5rem;
+    }
+    h1 {
+        font-size: 1.9rem;
+    }
+    #count {
+        font-size: 0.9rem;
+    }
+    .score {
+        width: 90vw;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    button {
+        width: 90vw;
+        font-size: 0.9rem;
+        padding: 11px;
+    }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        padding: 10px 15px;
+        justify-content: flex-start;
+    }
+    .bgText {
+        font-size: 4rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    #count {
+        font-size: 0.9rem;
+        margin-top: 4px;
+    }
 
+    .scoreBoard {
+        margin-top: 10px;
+        gap: 8px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .score {
+        width: 160px;
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    button {
+        margin-top: 12px;
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
